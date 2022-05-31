@@ -31,6 +31,12 @@ class Counter:
         "scala",
         "kt",
         "json",
+        "scss",
+        "ix",
+        "bf",
+        "yaml",
+        "xml",
+        "json"
     ]
 
     def __init__(self, dir: str) -> None:
