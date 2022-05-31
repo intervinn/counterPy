@@ -9,47 +9,33 @@ class Methods(Enum):
 
 class Counter:
 
-    formats: list = [
-        "java",
-        "py",
-        "js",
-        "jsx",
-        "ts",
-        "tsx",
-        "html",
-        "css",
-        "cpp",
-        "cs",
-        "c",
-        "h",
-        "rb",
-        "rs",
-        "go",
-        "vue",
-        "dart",
-        "php",
-        "scala",
-        "kt",
-        "json",
-        "scss",
-        "ix",
-        "bf",
-        "yaml",
-        "xml",
-        "json"
+    exclude = [
+        "gitignore",
+        "git"
     ]
 
-    def __init__(self, dir: str) -> None:
+    def __init__(self, dir: str, debug: bool) -> None:
         self.dir = dir
+        self.debug = debug
 
     def count(self, method: Enum):
 
         files: list = []
 
         for filename in os.listdir(self.dir):
-            for format in self.formats:
-                if filename.endswith(f".{format}"):
-                    files.append(format)
+            try:
+                file = filename.split(".")[1]
+                if file in self.exclude:
+                    pass
+                else:
+                    files.append(file)
+
+            except IndexError:
+                if self.debug:
+                    print("indexerror meeted skipping file")
+            
+
+
         
         res: dict = {
             "total": len(files)
