@@ -12,4 +12,4 @@ counter.count(count.Methods.PRINT) # print the result
 print( counter.count(count.Methods.RETURN) ) # print the returned result
 ```
 # installation
-just clone repo in ur folder fr
+clone repo in your folder
