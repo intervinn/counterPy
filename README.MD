@@ -13,3 +13,5 @@ print( counter.count(count.Methods.RETURN) ) # print the returned result
 ```
 # installation
 clone repo in your folder
+# contribution
+contribute with extending file formats list
