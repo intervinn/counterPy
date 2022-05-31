@@ -1,5 +1,5 @@
 # counter
-small utility class to count programming language formats in your project files
+small utility class to count files in your folder by file extensions
 
 # example usage
 ```py
